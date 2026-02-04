@@ -1,0 +1,7 @@
+aws --version
+docker --version / docker ps
+kubectl version --client
+bash --version
+docker images | grep nginx // if do not have: docker pull nginx
+
+
