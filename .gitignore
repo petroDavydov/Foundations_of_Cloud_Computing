@@ -1,0 +1,54 @@
+# --- OS-specific ---
+.DS_Store
+Thumbs.db
+
+# --- AWS CLI / Credentials ---
+.aws/
+*.pem
+*.key
+*.crt
+*.csv   # ключі доступу
+
+# --- Terraform ---
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# --- Kubernetes ---
+*.yaml.tmp
+*.kubeconfig
+.kube/
+
+# --- Docker ---
+*.pid
+*.log
+docker-compose.override.yml
+
+# --- Python  ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+
+# --- Node.js ---
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# --- CI/CD ---
+*.coverage
+*.cache
+*.out
+*.tmp
+
+# --- IDE / Editors ---
+.vscode/
+.idea/
+*.swp
+
+# --- Logs ---
+*.log
+logs/
