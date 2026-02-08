@@ -3,5 +3,50 @@ docker --version / docker ps
 kubectl version --client
 bash --version
 docker images | grep nginx // if do not have: docker pull nginx
+--------------------------
+commands
+
+Подивитися активний профіль AWS CLI
+aws configure list
+
+Дізнатися, який користувач зараз автентифікований
+aws sts get-caller-identity
+
+Створити новий профіль
+aws configure --profile <profile_name>
+
+Перевірити профілі
+aws configure list-profiles
+
+Використовувати потрібний профіль
+aws s3 ls --profile default
+aws s3 ls --profile <profile_name>
+
+Перемикання у VSCode(через термінал у VSCode)
+export AWS_PROFILE=<profile_name>
+export AWS_PROFILE=default
+echo $AWS_PROFILE
+
+
+Перемикання між профілями
+aws sts get-caller-identity --profile <profile_name>
+aws sts get-caller-identity --profile default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
