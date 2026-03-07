@@ -34,19 +34,34 @@ aws sts get-caller-identity --profile default
 
 
 
+Видалення s3 повністю при використанні elasticbeanstalk
+
+aws s3api delete-bucket-policy --bucket elasticbeanstalk-<your region>-<your aws ID>
+aws s3 rm s3://elasticbeanstalk-<your region>-<your aws ID> --recursive
+aws s3api delete-bucket --bucket elasticbeanstalk-<your region>-<your aws ID> --region <your region>
 
 
+agent
 
+sudo yum install amazon-cloudwatch-agent
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 
+cd /opt/aws/amazon-cloudwatch-agent/etc/
+sudo cp ../bin/config.json amazon-cloudwatch-agent.json
 
+sudo systemctl status amazon-cloudwatch-agent.service 
+sudo systemctl enable amazon-cloudwatch-agent.service 
+sudo systemctl restart amazon-cloudwatch-agent.service 
+----
+stress
 
+sudo yum install stress -y
+stress --cpu 2 --timeout 300
 
+- Використати простий `yes` для навантаження CPU:
+```bash
+yes > /dev/null &
+yes > /dev/null &
 
-
-
-
-
-
-
-
-
+Як протестувати NetworkPacketsIn
+ping -c 21000 <EC2_PUBLIC_IP>

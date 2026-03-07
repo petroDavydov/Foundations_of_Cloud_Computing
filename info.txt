@@ -1,0 +1,24 @@
+Video in 6 or 8 homework:
+
+4.28 -ECR create
+5.29 - VPC(Virtual Private Cloud)
+16.32 - EC2
+25.09 - create Security Group
+27.00 - add http Security Group
+27.45 - connect to Instance
+30.46 - install nginx
+32.40 - nginx in browser
+34.22 - /usr/share/nginx/html !!!!
+38.00 - create target Group
+40.05 - create balancer
+48.25 - result
+57.50 - delete Instances
+
+
+
+
+
+
+
+
+

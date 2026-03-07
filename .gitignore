@@ -52,3 +52,10 @@ yarn-error.log
 # --- Logs ---
 *.log
 logs/
+
+# --access--
+
+*_accessKeys*.csv
+*:Zone.Identifier
+*_credentials*.csv
+shimoda-adm_accessKeys.csv

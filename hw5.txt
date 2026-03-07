@@ -1,0 +1,10 @@
+aws ecr get-login-password --region <your region> | docker login --username AWS --password-stdin <your aws ID>.dkr.ecr.0.amazonaws.com
+
+
+docker build -t <your repo> .
+
+
+docker tag repo-hw5:latest <your aws ID>.dkr.ecr.eu-west-1.amazonaws.com/<your repo>:latest
+
+
+docker push <your aws ID>.dkr.ecr.<your region>.amazonaws.com/<your repo>:latest

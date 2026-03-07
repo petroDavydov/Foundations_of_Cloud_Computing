@@ -1,0 +1,40 @@
+-1- NAT Gateway
+aws ec2 describe-nat-gateways --nat-gateway-ids <NAT_ID>
+Якщо "State": "available" або "deleting" → видалити:
+aws ec2 delete-nat-gateway --nat-gateway-id <NAT_ID>
+
+-2- Elastic IP
+aws ec2 describe-addresses
+Якщо є непотрібні EIP → звільнити:
+aws ec2 release-address --allocation-id <EIP_ALLOC_ID>
+
+-3- Internet Gateway
+Від’єднати від VPC:
+aws ec2 detach-internet-gateway --internet-gateway-id <IGW_ID> --vpc-id <VPC_ID>
+Видалити:
+aws ec2 delete-internet-gateway --internet-gateway-id <IGW_ID>
+
+-4- VPC Peering
+aws ec2 describe-vpc-peering-connections
+Видалити:
+aws ec2 delete-vpc-peering-connection --vpc-peering-connection-id <PEERING_ID>
+
+-5- Flow Logs
+aws ec2 describe-flow-logs --filter "Name=vpc-id,Values=<VPC_ID>"
+Видалити:
+aws ec2 delete-flow-logs --flow-log-ids <FLOW_LOG_ID>
+
+-6- VPC
+Коли всі залежні ресурси видалені:
+aws ec2 delete-vpc --vpc-id <VPC_ID>
+
+
+
+
+
+
+
+
+
+
+
